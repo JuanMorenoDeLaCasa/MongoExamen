@@ -1,0 +1,19 @@
+extends ../layout
+
+block content
+    .container 
+        form(action="/alojamientos/create", method="post") 
+            label.form-label(for="nombre") Nombre:
+            input.form-control(type="text", name="nombre", required)
+            br
+            label.form-label(for="direccion") Direccion
+            input.form-control(type="text", name="direccion", required)
+            br
+            label.form-label(for="numero") Numero de personas maximo:
+            input.form-control(type="text", name="numero", required)
+            br
+            label.form-label(for="precio") Precio por noche:
+            input.form-control(type="text", name="precio", required)
+            br
+            button.btn.btn-success(type="submit") Guardar
+            a.btn.btn-danger(href="/alojamientos") Cancelar

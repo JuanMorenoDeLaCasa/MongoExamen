@@ -1,0 +1,23 @@
+extends ../layout
+
+block content
+    .container
+        h2 Borrado de reserva
+        .container 
+        form(action=`/reservas/delete/${reserva._id}`, method="post") 
+            label.form-label(for="nombre") Nombre:
+            input.form-control(type="text", name="nombre", required, value=`${reserva.nombre}` disabled)
+            br
+            label.form-label(for="duracion") Duracion:
+            input.form-control(type="text", name="duracion", required, value=`${reserva.duracion}` disabled)
+            br
+            label.form-label(for="fecha") Fecha:
+            input.form-control(type="text", name="fecha", required, value=`${reserva.fecha}` disabled)
+            br
+            label.form-label(for="hora") Hora:
+            input.form-control(type="text", name="hora", required, value=`${reserva.hora}` disabled)
+            br
+            p Va a proceder al borrado del reserva 
+            p ¿Está seguro?
+            button.btn.btn-danger(type="submit") Sí
+            a.btn.btn-primary(href="/reservas") No

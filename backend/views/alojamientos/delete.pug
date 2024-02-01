@@ -1,0 +1,23 @@
+extends ../layout
+
+block content
+    .container
+        h2 Borrado de alojamiento
+        .container 
+        form(action=`/alojamientos/delete/${alojamiento._id}`, method="post") 
+            label.form-label(for="nombre") Nombre:
+            input.form-control(type="text", name="nombre", required, value=`${alojamiento.nombre}` disabled)
+            br
+            label.form-label(for="direccion") Direccion:
+            input.form-control(type="text", name="direccion", required, value=`${alojamiento.direccion}` disabled)
+            br
+            label.form-label(for="numero") Numero Personas Maximo:
+            input.form-control(type="text", name="numero", required, value=`${alojamiento.numero}` disabled)
+            br
+            label.form-label(for="precio") Precio por noche:
+            input.form-control(type="text", name="precio", required, value=`${alojamiento.precio}` disabled)
+            br
+            p Va a proceder al borrado del alojamiento 
+            p ¿Está seguro?
+            button.btn.btn-danger(type="submit") Sí
+            a.btn.btn-primary(href="/alojamientos") No

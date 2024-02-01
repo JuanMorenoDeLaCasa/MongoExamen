@@ -1,0 +1,15 @@
+extends layout
+
+block content
+    h1 Bienvenido #{currentUser ? currentUser.nombre : 'Invitado'}
+
+    if !currentUser
+        ul 
+            li 
+                a(href="/auth/login") Sign in (entrar en el sistema)
+            li 
+                a(href="/auth/register") Sign up (alta usuario)
+    else 
+        p Logeado como: #{currentUser.nombre}
+        p 
+            a(href="/auth/logout") Logout 

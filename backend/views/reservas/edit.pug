@@ -1,0 +1,21 @@
+extends ../layout
+
+block content
+    .container
+
+        .container 
+        form(action=`/reservas/edit/${reserva._id}`, method="post") 
+            label.form-label(for="nombre") Nombre:
+            input.form-control(type="text", name="nombre", required, value=`${reserva.nombre}`)
+            br
+            label.form-label(for="duracion") Duracion:
+            input.form-control(type="text", name="duracion", required, value=`${reserva.duracion}`)
+            br
+            label.form-label(for="fecha") Fecha:
+            input.form-control(type="text", name="fecha", required, value=`${reserva.fecha}`)
+            br
+            label.form-label(for="hora") Hora:
+            input.form-control(type="text", name="hora", required, value=`${reserva.hora}`)
+            br
+            button.btn.btn-success(type="submit") Guardar
+            a.btn.btn-danger(href="/reservas") Cancelar

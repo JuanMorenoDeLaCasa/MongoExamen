@@ -1,0 +1,26 @@
+extends ../layout
+
+block content
+    .container 
+        h1 Lista de alojamientos
+        br
+        table.table.table-hover.table-striped.table-bordered
+            thead
+                tr
+                th Nombre
+                th Direccion
+                th Numero de personas maximo
+                th Precio por noche
+            tbody
+                each alojamiento in alojamientos
+                    tr
+                        td= alojamiento.nombre
+                        td= alojamiento.direccion
+                        td= alojamiento.numero
+                        td= alojamiento.precio
+                        td
+                            a(href=`/alojamientos/edit/${alojamiento._id}`) Editar
+                            span | 
+                            a(href=`/alojamientos/delete/${alojamiento._id}`) Eliminar
+        br
+        a(href="/alojamientos/create") Crear nueva alojamiento 

@@ -1,0 +1,21 @@
+extends ../layout
+
+block content
+    .container
+
+        .container 
+        form(action=`/alojamientos/edit/${alojamiento._id}`, method="post") 
+            label.form-label(for="nombre") Nombre:
+            input.form-control(type="text", name="nombre", required, value=`${alojamiento.nombre}`)
+            br
+            label.form-label(for="direccion") Direccion:
+            input.form-control(type="text", name="direccion", required, value=`${alojamiento.direccion}`)
+            br
+            label.form-label(for="numero") Numero Personas Maximo:
+            input.form-control(type="text", name="numero", required, value=`${alojamiento.numero}`)
+            br
+            label.form-label(for="precio") Precio por noche:
+            input.form-control(type="text", name="precio", required, value=`${alojamiento.precio}`)
+            br
+            button.btn.btn-success(type="submit") Guardar
+            a.btn.btn-danger(href="/alojamientos") Cancelar
